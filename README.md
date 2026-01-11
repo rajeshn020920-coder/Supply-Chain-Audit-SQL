@@ -1,6 +1,6 @@
 # Supply-Chain-Audit-SQL
 audit_queries.sql
-  SELECT 
+  '''SELECT 
   *,
   CASE WHEN Days_Actual > Days_Scheduled THEN 1 ELSE 0 END AS is_late,
   CASE WHEN Order_Status = 'SUSPECTED_FRAUD' THEN 1 ELSE 0 END AS is_fraud
@@ -23,4 +23,4 @@ SELECT
 FROM `your_audit_table`
 GROUP BY 1
 ORDER BY late_count DESC;
-  
+'''
